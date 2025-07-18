@@ -1,7 +1,7 @@
-let MyName = 'Anastasiia';
-let MyPatronym ='Vyacheslavovna';
-let MySurname = "Chavdar";
+let myName = 'Anastasiia';
+let myPatronym ='Vyacheslavovna';
+let mySurname = "Chavdar";
 
-console.log(MyName);
-console.log(MyPatronym);
-console.log(MySurname);
+console.log(myName);
+console.log(myPatronym);
+console.log(mySurname);
