@@ -209,3 +209,9 @@ function truncate(str, maxlength) {
 }
 console.log(truncate("Вот, что мне хотелось бы сказать на эту тему:", 20));
 console.log(truncate("Вот, хотелось", 20));
+
+//ЛОГИЧЕСКИЙ ТИП.ЛОГИЧЕСКИЙ ОПЕРАТОР.
+//true
+//false
+let operator = 'd';
+let
