@@ -1,26 +1,48 @@
-//1.задание:
+// //1.задание:
 let age =prompt('Введите свой возраст');
 if (isNaN(age) || age < 18) {
   alert('Доступ запрещен')
 } else {
   alert('Доступ разрешен')
 }
-//или: 
+// //или: 
+// while (true) {
+//   let age = prompt('Введите свой возраст');
+  
+//   if (isNaN(age)) {
+//     alert('Ошибка: введите число!');
+//     continue; 
+//   }
+  
+//   if (age.length >= 3) {
+//     let confirmAge = confirm('Слишком большое число, это действительно Ваш возраст?');
+//     if (!confirmAge) {
+//       continue; 
+//   }
+// }  
+//   if (age < 18) {
+//     alert('Доступ запрещен!');
+//     break; 
+//   } else {
+//     alert('Доступ разрешен!');
+//     break; 
+//   }
+// }
+
 while (true) {
   let age = prompt('Введите свой возраст');
   
   if (isNaN(age)) {
     alert('Ошибка: введите число!');
     continue; 
-  }
-  
-  if (age.length >= 3) {
+  } else if (age.length >= 3) {
     let confirmAge = confirm('Слишком большое число, это действительно Ваш возраст?');
-    if (!confirmAge) {
+    if (confirmAge) {
+      break; 
+    } else {
       continue; 
-  }
-}  
-  if (age < 18) {
+    }
+  } else if (age < 18) {
     alert('Доступ запрещен!');
     break; 
   } else {
@@ -29,7 +51,7 @@ while (true) {
   }
 }
 
-//2.задание:
+// //2.задание:
 let anyNumber = 7;
 console.log(anyNumber % 2 === 0);
 //или
@@ -39,7 +61,7 @@ console.log (anyNumber % 2 === 0 ? 'Введено чётое число' : 'В�
 //или
 console.log(!isNaN(anyNumber) ? (anyNumber % 2 === 0 ? true : false) :'Ошибка: введено не число!');
 
-// 3. Задание:
+// // 3. Задание:
 let num1 = +prompt('Введите первое число');
 let operator = prompt('Введите +, -, * или /');
 let num2 = +prompt('Введите второе число');
@@ -63,7 +85,7 @@ switch(operator) {
 alert(`${num1} ${operator} ${num2} = ${result}`);
 console.log(`${num1} ${operator} ${num2} = ${result}`);
 
-// или
+// // или
 let numOne = +prompt('Введите первое число');
 let operators = prompt('Введите +, -, * или /');
 let numTwo = +prompt('Введите второе число');
@@ -100,7 +122,7 @@ if (isNaN(numOne) || isNaN(numTwo)) {
     console.log(`${numOne} ${operators} ${numTwo} = ${resultTwo}`);
   }
 }
-// 4.Задание:
+// // 4.Задание:
 const sentence = prompt('Напишите что-нибудь:');
 if (sentence.length > 10) {
   let newSentence = sentence.split("").map((char, i) => i >= 5 ? "*" : char).join("");
@@ -108,7 +130,7 @@ if (sentence.length > 10) {
 } else {
   console.log(sentence.toUpperCase())
 };
-//или
+// //или
 const sentenceTwo = prompt('Напишите что-нибудь:');
 if (!sentenceTwo) {
   console.log("Ничего не написано");
@@ -119,7 +141,7 @@ if (!sentenceTwo) {
   console.log(sentenceTwo.toUpperCase());
 }
 
-// 5.Задание:
+// // 5.Задание:
 let hour = +prompt('Введите текущий час (число от 0 до 23):');
 
 if (isNaN(hour) || hour < 0 || hour > 23) {
@@ -139,7 +161,7 @@ if (isNaN(hour) || hour < 0 || hour > 23) {
   console.log("Вечер");
 }
 
-// 6.Задание:
+// // 6.Задание:
 let email = prompt('Введите свой email:');
 if (email && email.includes('@') && email.includes('.')) {
   alert("Верный формат");
@@ -147,7 +169,7 @@ if (email && email.includes('@') && email.includes('.')) {
   alert("Ошибка!");
 }
 
-//7.Задание:
+// //7.Задание:
 const word = prompt('Введите любое слово, если слово читается одинаково с начала и с конца, то выйдет сообщение "true", а иначе "false".');
 
 if(word) {
@@ -164,7 +186,7 @@ if(word) {
   alert('ничего не введено')
 }
 
-//или
+// //или
 if (word) {
   const normalWord = word.trim().toUpperCase();
   const palindromeWord = normalWord.split('').reverse().join('');
