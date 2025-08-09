@@ -6,21 +6,43 @@ if (isNaN(age) || age < 18) {
   alert('Доступ разрешен')
 }
 // //или: 
+while (true) {
+  let age = prompt('Введите свой возраст');
+  
+  if (isNaN(age)) {
+    alert('Ошибка: введите число!');
+    continue; 
+  }
+  
+  if (age.length >= 3) {
+    let confirmAge = confirm('Слишком большое число, это действительно Ваш возраст?');
+    if (!confirmAge) {
+      continue; 
+  }
+}  
+  if (age < 18) {
+    alert('Доступ запрещен!');
+    break; 
+  } else {
+    alert('Доступ разрешен!');
+    break; 
+  }
+}
+//или
 // while (true) {
 //   let age = prompt('Введите свой возраст');
   
 //   if (isNaN(age)) {
 //     alert('Ошибка: введите число!');
 //     continue; 
-//   }
-  
-//   if (age.length >= 3) {
+//   } else if (age.length >= 3) {
 //     let confirmAge = confirm('Слишком большое число, это действительно Ваш возраст?');
-//     if (!confirmAge) {
+//     if (confirmAge) {
+//       break; 
+//     } else {
 //       continue; 
-//   }
-// }  
-//   if (age < 18) {
+//     }
+//   } else if (age < 18) {
 //     alert('Доступ запрещен!');
 //     break; 
 //   } else {
@@ -29,25 +51,31 @@ if (isNaN(age) || age < 18) {
 //   }
 // }
 
+//или
 while (true) {
-  let age = prompt('Введите свой возраст');
-  
+  let ageInput = prompt('Введите свой возраст');
+
+  if (ageInput === null || ageInput.trim() === "") {
+    alert("Вы отменили ввод");
+    continue;
+  }
+  const age = Number(ageInput);
   if (isNaN(age)) {
     alert('Ошибка: введите число!');
-    continue; 
-  } else if (age.length >= 3) {
-    let confirmAge = confirm('Слишком большое число, это действительно Ваш возраст?');
-    if (confirmAge) {
-      break; 
-    } else {
+    continue;
+  }
+  if (ageInput.length >= 3) {
+    const confirmAge = confirm('Слишком большое число, это действительно Ваш возраст?');
+    if (!confirmAge) {
       continue; 
     }
-  } else if (age < 18) {
+  }
+  if (age < 18) {
     alert('Доступ запрещен!');
-    break; 
+    break;
   } else {
     alert('Доступ разрешен!');
-    break; 
+    break;
   }
 }
 
