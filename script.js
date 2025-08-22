@@ -1,4 +1,5 @@
 //1.задание:  Вывод чисел от 1 до N. Попросите пользователя ввести любое число N через prompt и выведите все числа от 1 до N в консоль.
+
 let anyNumber = +prompt('Введите число от 1 до 100');
 if (!isNaN(anyNumber) && anyNumber > 0 && anyNumber <=100){
   for (let i=1; i <= anyNumber; i ++) {
@@ -10,6 +11,7 @@ if (!isNaN(anyNumber) && anyNumber > 0 && anyNumber <=100){
 } 
 
 //2.задание: Сумма чисел от 1 до N. Запросите число N и вычислите сумму всех чисел от 1 до N и результат выведите в консоль.
+
 let N = +prompt('введите число от 0 до 100');
 let sum = 0;
 if (!isNaN(N) && N >= 1 && N <= 100) {
@@ -27,13 +29,15 @@ if (!isNaN(N) && N >= 1 && N <= 100) {
 for (let i = 0; i <=100; i=i+2) {
     console.log(i)
 }
-//или
+// //или
+
 for (let i = 0; i <= 100; i++) {  // 1. Цикл от 0 до 100
   if (i % 2 === 0) {              // 2. Проверка на чётность
     console.log(i)                 // 3. Вывод чётного числа
   }
 }
 //или
+
 let index = 0
 while (index <= 100) {
   if (index % 2 === 0) console.log(index)
@@ -61,8 +65,8 @@ let summa = 0;
 
 while(true) {
   let input = prompt('введите число или напишите "стоп" для прекращения ввода');
-  if (input === "стоп" && count!= 0) {
-    input= input.trim().toLowerCase();
+  inputWord= input.trim().toLowerCase();
+  if (inputWord === "стоп" && count!= 0) {
     console.log(`среднее арифметическое - это сумма введенных чисел / на количество вводов, ${summa}/${count} =`, summa/count);
     alert(summa/count);
     break;
@@ -77,6 +81,7 @@ while(true) {
     alert('чтото пошло не так');
   }
 }
+
 //6. задание:Максимальное число. Запрашивайте числа у пользователя пока он не введет слово "стоп", затем выведите максимальное число из введенных.
 let i = 0;
 let maxNum = -Infinity;
@@ -121,6 +126,25 @@ if (inputStr) {
 
 //8.Задание.8. Подсчет гласных. Посчитайте количество гласных букв (a, e, i, o, u) в введенной строке Пользователем, например "Hello world".
 
+// let str = prompt('Введите строку  на английском  языке');
+// let vowels = ['a', 'e', 'i', 'o', 'u'];
+// let countOfVowels = 0;
+
+// if (str && str !== '') {
+//   let newStr = str.trim().toLowerCase();  
+//   for (let i = 0; i < newStr.length; i++) {
+//     let currentChar = newStr[i];
+//     if (vowels.includes(currentChar)) {
+//       countOfVowels++; 
+//     }
+//   }  
+//   console.log(`Количество гласных: ${countOfVowels}`);
+//   alert(`Количество гласных: ${countOfVowels}`);
+// } else {
+//   console.log('Вы не ввели строку');
+// }
+
+//или
 let str = prompt('Введите строку  на английском  языке');
 let vowels = ['a', 'e', 'i', 'o', 'u'];
 let countOfVowels = 0;
@@ -129,8 +153,13 @@ if (str && str !== '') {
   let newStr = str.trim().toLowerCase();  
   for (let i = 0; i < newStr.length; i++) {
     let currentChar = newStr[i];
-    if (vowels.includes(currentChar)) {
-      countOfVowels++; 
+    if (currentChar === 'a' || 
+        currentChar === 'e' || 
+        currentChar === 'i' || 
+        currentChar === 'o' || 
+        currentChar === 'u') {
+      countOfVowels++;
+      console.log(currentChar);
     }
   }  
   console.log(`Количество гласных: ${countOfVowels}`);
@@ -141,14 +170,38 @@ if (str && str !== '') {
 
 //9.Задание.Замена символов. Замените все буквы 'a' в строке на '!' и выведите результат. За пример слова берите любое, где есть бука "A" / 'a'
 
-let input = prompt('введите слово английскими буквами, если в нем будет буква/ы "a", произойдет их замена на знак "!":');
+// let input = prompt('введите слово английскими буквами, если в нем будет буква/ы "a", произойдет их замена на знак "!":');
+// let transformWord='';
+// if (input && input != '') {
+//   let word =input.trim().toLowerCase();
+//   console.log(word)
+//   for (let i =0; i < word.length; i++) {
+//     newWord = word[i];
+//     transformWord += newWord.replaceAll('a', '!');
+//   }
+//   console.log (transformWord);
+// }
+
+//или
+
+let word = prompt('введите слово, если в нем будет буква/ы "A","a","А","а", произойдет их замена на знак "!":');
 let transformWord='';
-if (input && input != '') {
-  let word =input.trim().toLowerCase();
+if (word && word != '') {
   console.log(word)
   for (let i =0; i < word.length; i++) {
-    newWord = word[i];
-    transformWord += newWord.replaceAll('a', '!');
+      let newWord = word[i]
+    if (newWord === "A" ||
+        newWord === "a" ||
+        newWord === "А"  ||
+        newWord=== "а") {
+          transformWord += "!";
+        }  else {
+          transformWord += newWord;
+        }       
   }
-  console.log (transformWord);
+    console.log("Преобразованное слово:", transformWord);
+} else {
+  console.log('Вы не ввели слово');
 }
+
+
