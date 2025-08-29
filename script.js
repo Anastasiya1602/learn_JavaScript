@@ -46,7 +46,6 @@ let num2 =  [3, 7, 2, 9, 5];
 let maxNum2 = Math.max(...num2);
 console.log(maxNum2);
 
-
 //Проверить, есть ли элемент в массиве:
 //1.Без метода: заводим 2 переменные let fruits = ['apple', 'banana', 'orange']; и  let search = 'banana', если элемент в массиве существует, выводим в консоль текст "Найден элемент", в противном случае " Элемент не найден".
 let fruits = ['apple', 'banana', 'orange'];
@@ -130,6 +129,7 @@ console.log(average);
 
 //2.С методом (reduce): дан массив let arr = [10, 20, 30, 40]; необходимо получить его среднеарифметическое значение:
 let arr6 = [10, 20, 30, 40];
+
 let result = arr6.reduce(function(acc, curr) {
   return acc + curr;
 }, 0);
@@ -140,6 +140,7 @@ console.log(average2);
 //1.Без метода:дан массив let arr = [1, 2, 3, 4, 5, 6]; необходимо отфильтровать его в новый массив только с четными числами.
 
 let arr7 = [1, 2, 3, 4, 5, 6]; 
+
 let even =[];
 for (let i = 0; i < arr7.length; i++) {
   if(arr7[i] % 2 === 0) {
@@ -170,3 +171,69 @@ console.log(doubleNum);
 let anyNums = [1, 2, 3];
 let doubleNums = anyNums.map(anyNums => anyNums * 2)
 console.log(doubleNums);
+
+
+// Уровень: Сложный (Разделений не будет на БЕЗ и С методов, делаем как сможете)
+// 1. Объединить два массива без дубликатов.
+//Без метода:Дан массив let arr1 = [1, 2, 3] и let arr2 = [2, 3, 4].Необходимо объединить без дубликатов.
+
+let anyArray1 = [1, 2, 3];
+let anyArray2 = [2, 3, 4];
+
+// function merge(anyArr1, anyArr2) {
+//   let mergeArr = [];
+//   for()
+// }
+
+
+//С методом (Set + spread):Дан массив let arr1 = [1, 2, 3] и let arr2 = [2, 3, 4]. Необходимо объединить без дубликатов. 
+
+const array1 = [1, 2, 3];
+const array2 = [2, 3, 4];
+
+const newArray = [...new Set([...array1, ...array2])];
+console.log(newArray); 
+
+//2. Найти все уникальные элементы в массиве
+//Без метода: Дан массив let numbers = [1, 2, 2, 3, 4, 4, 5].Необходимо в новую переменную let unique = [] собрать только уникальные элементы массива numbers
+
+let nums2 = [1, 2, 2, 3, 4, 4, 5];
+let unique = [];
+
+for (let i = 0; i < nums2.length; i++) {
+  let count = 0;
+
+  for (let j = 0; j < nums2.length; j++) {
+    if (nums2[j] === nums2[i]) {
+      count++;
+    }
+  }
+
+  if (count === 1) {
+    unique.push(nums2[i]);
+  }
+}
+console.log(unique); // [1, 3, 5]
+
+// С методом (filter + indexOf): Дан массив let numbers = [1, 2, 2, 3, 4, 4, 5].Необходимо в новую переменную let unique = [] собрать только уникальные элементы массива numbers
+let num3 =  [1, 2, 2, 3, 4, 4, 5];
+let unique2 = [];
+unique2 = num3.filter((num, i, arr) => {
+  return arr.indexOf(num) === i
+})
+console.log(unique2);
+
+//3. Сортировка пузырьком (Bubble Sort) (Самое сложное задание из текущего списка, для выполнения необходимо изучить данный алгоритм который так и называется Пузырьковая сортировка).
+// Дан массив let numbers = [5, 3, 8, 1, 2]; Необходимо его отфильтровать в порядке возрастания. В результате мы должны получить [1, 2, 3, 5, 8]
+let anyNumbers = [5, 3, 8, 1, 2];
+for (let i = 0; i < anyNumbers.length - 1; i ++) {
+  for (let j = 0; j < anyNumbers.length - 1 -i; j ++) {
+    if (anyNumbers[j] > anyNumbers[j+1]) {
+      let sort = anyNumbers[j]
+      anyNumbers[j] = anyNumbers[j+1]
+      anyNumbers[j+1]=sort
+    }
+  }
+} 
+console.log(anyNumbers);
+//P.S не очень поняла что я сделала, использовала каркас, немного сложно понять что здесь проихсодит
