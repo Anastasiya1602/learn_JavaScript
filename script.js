@@ -183,7 +183,7 @@ let anyArray2 = [2, 3, 4];
 // function merge(anyArr1, anyArr2) {
 //   let mergeArr = [];
 //   for()
-// }
+// } пока что не доразобралась, буду думать
 
 
 //С методом (Set + spread):Дан массив let arr1 = [1, 2, 3] и let arr2 = [2, 3, 4]. Необходимо объединить без дубликатов. 
