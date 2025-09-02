@@ -180,11 +180,101 @@ console.log(doubleNums);
 let anyArray1 = [1, 2, 3];
 let anyArray2 = [2, 3, 4];
 
-// function merge(anyArr1, anyArr2) {
-//   let mergeArr = [];
-//   for()
-// } пока что не доразобралась, буду думать
+let newArr2 = [];
+let mergeArr = [];
 
+for (let i = 0; i < anyArray1.length; i++) {
+  newArr2.push(anyArray1[i]); 
+}
+for (let j = 0; j < anyArray2.length; j++) {
+  newArr2.push(anyArray2[j]);
+}
+// console.log("Объединенный массив:", newArr2);
+
+for (let k = 0; k < newArr2.length; k++) {
+  let isDuplicate = false;
+  
+  for (let l = 0; l < mergeArr.length; l++) {
+    if (mergeArr[l] === newArr2[k]) {
+      isDuplicate = true;
+      break; 
+    }
+  }  
+  
+  if (!isDuplicate) {
+    mergeArr.push(newArr2[k]);
+  }
+}
+console.log("Массив без дубликатов:", mergeArr);
+
+//или
+let anyArray3 = [1, 2, 3];
+let anyArray4 = [2, 3, 4];
+
+let mergeArr2 = [];
+
+for (let i = 0; i < anyArray3.length; i++) {
+  let isDuplicate = false;
+
+  for (let j = 0; j < mergeArr2.length; j++) {
+    if (mergeArr2[j] === anyArray3[i]) {
+      isDuplicate = true;
+      break;
+    }
+  }
+  
+  if (!isDuplicate) {
+    mergeArr2.push(anyArray3[i]);
+  }
+}
+
+for (let i = 0; i < anyArray4.length; i++) {
+  let isDuplicate = false;
+  
+  for (let j = 0; j < mergeArr2.length; j++) {
+    if (mergeArr2[j] === anyArray4[i]) {
+      isDuplicate = true;
+      break;
+    }
+  }
+  
+  if (!isDuplicate) {
+    mergeArr2.push(anyArray4[i]);
+  }
+}
+
+console.log("Результат:", mergeArr2); 
+
+//или
+let anyArray5 = [1, 2, 3];
+let anyArray6 = [2, 3, 4];
+let result2 = [];
+
+for (let i = 0; i < anyArray5.length; i++) {
+    if (!result2.includes(anyArray5[i])) {
+        result2.push(anyArray5[i]);
+    }
+}
+for (let i = 0; i < anyArray6.length; i++) {
+    if (!result2.includes(anyArray6[i])) {
+        result2.push(anyArray6[i]);
+    }
+}
+console.log(result2); 
+
+
+//или
+let a = [1, 2, 3];
+let b = [2, 3, 4];
+let result3 = [];
+let c = a.concat(b); 
+
+for (let i = 0; i < c.length; i++) {
+    if (result3.indexOf(c[i]) === -1) { 
+        result3.push(c[i]);
+    }
+}
+console.log(result3); 
 
 //С методом (Set + spread):Дан массив let arr1 = [1, 2, 3] и let arr2 = [2, 3, 4]. Необходимо объединить без дубликатов. 
 
@@ -215,7 +305,7 @@ for (let i = 0; i < nums2.length; i++) {
 }
 console.log(unique); // [1, 3, 5]
 
-// С методом (filter + indexOf): Дан массив let numbers = [1, 2, 2, 3, 4, 4, 5].Необходимо в новую переменную let unique = [] собрать только уникальные элементы массива numbers
+//С методом (filter + indexOf): Дан массив let numbers = [1, 2, 2, 3, 4, 4, 5].Необходимо в новую переменную let unique = [] собрать только уникальные элементы массива numbers
 let num3 =  [1, 2, 2, 3, 4, 4, 5];
 let unique2 = [];
 unique2 = num3.filter((num, i, arr) => {
