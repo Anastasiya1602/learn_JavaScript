@@ -213,3 +213,88 @@
 //ЛОГИЧЕСКИЙ ТИП.ЛОГИЧЕСКИЙ ОПЕРАТОР.
 //true
 //false
+
+
+//objects:
+// let fruit = prompt('какой фрукт купить?');//вводим apple
+// let bag = {
+//   [fruit]: 7,
+// }
+// console.log(bag.aple); //7
+// let codes = {
+//   49: "Германия",
+//   41: "Швейцария",
+//   44: "Великобритания",
+//   1: "США"
+// };
+
+// for (let code in codes) {
+//   console.log(code); // 1, 41, 44, 49
+// }
+// console.log(codes);
+
+// Создайте пустой объект user.
+// Добавьте свойство name со значением John.
+// Добавьте свойство surname со значением Smith.
+// Измените значение свойства name на Pete.
+// Удалите свойство name из объекта.
+// let user = {};
+// user.name = 'John';
+// user.surname = 'Smith';
+// console.log(user);
+// console.log(user.name);
+// console.log(user.surname);
+// user.name = 'Pete';
+// console.log(user.name);
+// console.log(user);
+// delete user.name
+// console.log(user);
+
+// У нас есть объект, в котором хранятся зарплаты нашей команды:
+// Напишите код для суммирования всех зарплат и сохраните результат в переменной sum. Должно получиться 390. Если объект salaries пуст, то результат должен быть 0.
+// let salaries = {
+//   John: 100,
+//   Ann: 160,
+//   Pete: 130
+// }
+// let sum = salaries.John+salaries.Ann+salaries.Pete
+// console.log(sum)
+
+// sum = 0;
+// for (let key in salaries) {
+//   sum += salaries[key];
+// }
+
+// console.log(sum); 
+
+
+
+// Создайте функцию multiplyNumeric(obj), которая умножает все числовые свойства объекта obj на 2.
+// до вызова функции
+// let menu = {
+//   width: 200,
+//   height: 300,
+//   title: "My menu"
+// };
+
+// multiplyNumeric(menu);
+// // после вызова функции
+// menu = {
+//   width: 400,
+//   height: 600,
+//   title: "My menu"
+// };
+// Обратите внимание, что multiplyNumeric не нужно ничего возвращать. Следует напрямую изменять объект.
+// P.S. Используйте typeof для проверки, что значение свойства числовое.
+
+// function multiplyNumeric(menu) {
+//   for (let key in menu) {
+//     // console.log(typeof menu[key])
+//     if (typeof menu[key] === "number") {
+//       menu[key] = menu[key]*2
+//     } 
+//   }
+//   console.log(menu)
+// }
+// multiplyNumeric(menu)
+
