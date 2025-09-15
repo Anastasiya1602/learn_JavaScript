@@ -298,3 +298,50 @@
 // }
 // multiplyNumeric(menu)
 
+// let number = 5; 
+// const f = (number) => {
+// number = number +10;
+// return number
+// };
+// f(number);
+// console.log(number);//5
+// const newNumber = f(number);
+// console.log(newNumber);//15
+// let salaries = {
+//   John: 300,
+//   Pete: 300,
+//   Mary: 250
+// };
+
+
+// function sumSalaries (obj) {
+//   let result = 0;
+//   for (let value of Object.values(obj)) {
+//     console.log(value);
+//     result += value;
+//   }
+//   return result;
+// }
+
+// console.log( sumSalaries(salaries) ); // 650
+
+// Напишите функцию count(obj), которая возвращает количество свойств объекта:
+// let user = {
+//   name: 'John',
+//   age: 30
+// };
+
+// function count (obj) {
+
+//   let arr = [];
+
+//   for (let property of Object.entries(obj)){
+//     console.log(property);
+//     arr.push(property);
+//   }
+//   return arr.length;
+// }
+
+// //или внутри функции просто пишем return Object.entries(obj).length;
+
+// console.log( count(user) ); // 2
