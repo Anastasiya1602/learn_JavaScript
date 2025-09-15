@@ -7,6 +7,7 @@ let car = {
 }
 
 const keysOfObj = Object.keys(car);
+
 console.log(keysOfObj);
 
 //2. Object.values.Дан объект let fruitPrices = { apple: 50, banana: 30, orange: 70 }. Используй Object.values(), чтобы получить массив всех значений и вычисли их общую сумму.
@@ -16,20 +17,21 @@ let fruitPrices = {
   banana: 30, 
   orange: 70 
 };
-// let value = Object.values(fruitPrices);
-// let totalPrice = 0;
+let value = Object.values(fruitPrices);
+let totalPrice = 0;
 
-// for (let i = 0; i < value.length; i++) {
-//   let currentPrice = value[i];
-//   totalPrice += currentPrice;
-// }
+for (let i = 0; i < value.length; i++) {
+  let currentPrice = value[i];
+  totalPrice += currentPrice;
+}
 
-// console.log(totalPrice);
+console.log(totalPrice);
 
 //или
 
-let totalPrice = Object.values(fruitPrices).reduce((sum, price) => sum + price, 0)
-console.log(totalPrice);
+let totalPrice2 = Object.values(fruitPrices).reduce((sum, price) => sum + price, 0)
+
+console.log(totalPrice2);
 
 //3. Object.entries.Дан объект let book = { title: 'JavaScript Basics', author: 'Jane Doe', pages: 200 }. Используй Object.entries(), чтобы преобразовать объект в массив пар [ключ, значение] и выведи его в консоль.
 
@@ -40,6 +42,7 @@ let book = {
 };
 
 let entries = Object.entries(book);
+
 console.log(entries);
 
 //4. Подсчет количества свойств. Напиши функцию countProperties(obj), которая принимает объект и возвращает количество его свойств, используя Object.keys().
@@ -69,6 +72,7 @@ let scores = {
 };
 
 let maxNumber = Object.values(scores).reduce((max, current) => current > max ? current : max, 0);
+
 console.log(maxNumber);
 
 //Уровень Средний:
@@ -127,7 +131,7 @@ function areObjectsEqual(obj1, obj2) {
       }
     }
       return true
-      
+
   } else {
 
     return false
