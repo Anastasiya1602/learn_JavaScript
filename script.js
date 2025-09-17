@@ -64,37 +64,24 @@ function myForEach(arr, callback) {
   for (let i = 0; i < arr.length; i++) {
 		callback(arr[i], i, arr);
 	}
-
-  return undefined;
-
 }
 
-let array1 = [1, 2, 3, 4, 5, 6];
-let array2 = ['fgdd', 'njghjj', 'ada', 'fgfh', 'hjl'];
-let array3 = [34, 'name', 123, 'fgfd'];
-
-myForEach(array1, function(element, index, array) {
+const forEach = function (element, index, array) {
   console.log(`Элемент: ${element}, Индекс: ${index}, Массив: [${array}]`);
-});
+}
+myForEach([34, 'name', 123, 'fgfd'], forEach);
 
-myForEach(array2, function(element, index, array) {
-  console.log(`Элемент: ${element}, Индекс: ${index}, Массив: [${array}]`);
-});
-
-myForEach(array3, function(element, index, array) {
-  console.log(`Элемент: ${element}, Индекс: ${index}, Массив: [${array}]`);
-});
 
 //как метод:
+let array = [1, 2, 3, 4, 5, 6];
 
 Array.prototype.myForEach = function(callback) {
   for (let i = 0; i < this.length; i++) {
     
     callback(this[i], i, this);
-  }
-  return undefined; 
+  } 
 };
 
-array1.myForEach(function(element, index, array) {
+array.myForEach(function(element, index, array) {
   console.log(`Элемент: ${element}, Индекс: ${index}, Массив: ${array}`);
 });
